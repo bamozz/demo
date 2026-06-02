@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Susan K. Fitzgibbons, CPA — Dakota Accounting · Sioux Falls, SD</title>
+<style>
+:root {
+  --ink: #16202e;
+  --ink-2: #4e5e70;
+  --bg: #f6f4f0;
+  --paper: #ffffff;
+  --line: #dbd6cd;
+  --navy: #1a2d4a;
+  --navy-d: #111e33;
+  --navy-l: #e2e8f0;
+  --gold: #b89a52;
+  --gold-l: #f4eddb;
+  --cream: #fdfbf7;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3, h4 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -0.01em; line-height: 1.15; }
+h1 { font-size: clamp(2.1rem, 4.6vw, 3.5rem); }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); margin-bottom: 16px; }
+h3 { font-size: 1.2rem; margin-bottom: 10px; }
+p { color: var(--ink-2); }
+
+/* Top bar */
+.bar {
+  background: var(--navy-d);
+  color: #ccd4de;
+  font-size: 0.85rem;
+  padding: 8px 0;
+}
+.bar .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.bar a { color: #ccd4de; text-decoration: none; }
+.bar a:hover { color: #fff; }
+.bar strong { color: #fff; }
+
+/* Nav */
+.nav { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; padding-bottom: 16px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark {
+  width: 42px; height: 42px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-d) 100%);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-family: Georgia, serif; font-size: 1.2rem; font-weight: 600;
+}
+.brand-name { font-family: Georgia, serif; font-size: 1.05rem; font-weight: 500; color: var(--ink); }
+.brand-name span { display: block; font-family: -apple-system, sans-serif; font-size: 0.68rem; color: var(--ink-2); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+.menu { display: flex; gap: 26px; align-items: center; }
+.menu a { color: var(--ink); text-decoration: none; font-size: 0.93rem; }
+.menu a:hover { color: var(--navy); }
+.cta {
+  display: inline-block;
+  background: var(--navy);
+  color: #fff;
+  padding: 11px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.93rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cta:hover { background: var(--navy-d); }
+.cta.gold { background: var(--gold); color: var(--navy-d); }
+.cta.gold:hover { background: #9f8440; }
+.cta.alt { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+.cta.alt:hover { background: var(--navy-l); }
+@media (max-width: 800px) { .menu { display: none; } }
+
+/* Hero */
+.hero {
+  padding: 68px 0 52px;
+  background: linear-gradient(160deg, var(--navy-l) 0%, var(--bg) 55%);
+}
+.hero .grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
+.eyebrow { display: inline-block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+.hero h1 { color: var(--ink); margin-bottom: 20px; }
+.hero h1 em { font-style: italic; color: var(--navy); }
+.hero .lede { font-size: 1.1rem; color: var(--ink-2); margin-bottom: 32px; max-width: 480px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.hero-meta { margin-top: 36px; display: flex; gap: 28px; flex-wrap: wrap; }
+.hero-meta div { font-size: 0.88rem; color: var(--ink-2); }
+.hero-meta strong { color: var(--ink); display: block; font-size: 1.03rem; font-family: Georgia, serif; }
+
+/* Hero card */
+.hero-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 24px 48px -28px rgba(17, 30, 51, 0.22);
+}
+.hero-card .card-top { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
+.practitioner-photo {
+  width: 72px; height: 72px; flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy-l) 0%, var(--gold-l) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif; font-size: 1.6rem; color: var(--navy); font-weight: 600;
+  border: 2px solid var(--line);
+}
+.practitioner-info strong { display: block; font-family: Georgia, serif; font-size: 1.1rem; color: var(--ink); }
+.practitioner-info span { display: block; font-size: 0.82rem; color: var(--ink-2); margin-top: 2px; }
+.elp-badge {
+  background: var(--gold-l);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 0.88rem;
+  color: var(--navy-d);
+  margin-bottom: 18px;
+}
+.elp-badge strong { display: block; color: var(--navy); margin-bottom: 4px; font-size: 0.9rem; }
+.card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.card-stat { padding: 12px 14px; background: var(--bg); border-radius: 8px; text-align: center; }
+.card-stat strong { display: block; font-family: Georgia, serif; font-size: 1.3rem; color: var(--navy); }
+.card-stat span { font-size: 0.78rem; color: var(--ink-2); letter-spacing: 0.05em; }
+@media (max-width: 800px) {
+  .hero .grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero { padding: 48px 0 36px; }
+}
+
+/* Services */
+section { padding: 72px 0; }
+.section-head { max-width: 680px; margin-bottom: 48px; }
+.section-head .eyebrow { color: var(--navy); }
+.section-head p { margin-top: 12px; }
+
+.services { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.svc {
+  padding: 28px 24px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.svc:hover { border-color: var(--navy); transform: translateY(-2px); }
+.svc-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: var(--navy-l);
+  color: var(--navy-d);
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif; font-size: 1.25rem; font-weight: 600;
+  margin-bottom: 16px;
+}
+.svc h3 { color: var(--ink); }
+.svc p { font-size: 0.94rem; }
+@media (max-width: 800px) { .svc-grid { grid-template-columns: 1fr; } }
+
+/* Why / About Susan */
+.why { background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.why .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.why-visual {
+  aspect-ratio: 4/5;
+  background: linear-gradient(145deg, var(--navy-l) 0%, var(--gold-l) 100%);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.why-visual::before {
+  content: "Susan K. Fitzgibbons, CPA";
+  position: absolute; top: 20px; left: 20px; right: 20px;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--navy-d); background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: 20px;
+  text-align: center;
+}
+.why-visual::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(26,45,74,0.15), transparent 50%),
+    radial-gradient(circle at 70% 72%, rgba(184,154,82,0.25), transparent 50%);
+}
+.why-visual .badge {
+  position: absolute; bottom: 28px; left: 24px; right: 24px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  padding: 20px 22px;
+  border-radius: 14px;
+  z-index: 2;
+}
+.why-visual .badge strong { display: block; font-family: Georgia, serif; font-size: 1.35rem; color: var(--navy-d); }
+.why-visual .badge span { color: var(--ink-2); font-size: 0.88rem; }
+.why ul { list-style: none; margin-top: 24px; }
+.why li { padding: 13px 0; border-bottom: 1px solid var(--line); display: flex; gap: 14px; align-items: flex-start; }
+.why li::before { content: "✓"; color: var(--gold); font-weight: 700; font-size: 1.1rem; flex-shrink: 0; padding-top: 1px; }
+.why li strong { display: block; color: var(--ink); margin-bottom: 2px; font-size: 0.97rem; }
+.why li span { color: var(--ink-2); font-size: 0.92rem; }
+@media (max-width: 800px) { .why .grid { grid-template-columns: 1fr; gap: 32px; } }
+
+/* Testimonials -->
+.testimonials { background: var(--paper); border-top: 1px solid var(--line); }
+.test-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+.test-card {
+  padding: 28px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 14px; letter-spacing: 0.05em; }
+.test-card p { font-size: 0.97rem; font-style: italic; color: var(--ink); margin-bottom: 16px; }
+.test-card cite { font-style: normal; font-size: 0.84rem; color: var(--ink-2); font-weight: 600; }
+@media (max-width: 800px) { .test-grid { grid-template-columns: 1fr; } }
+
+/* CTA strip */
+.strip {
+  background: var(--navy-d);
+  color: #fff;
+  padding: 56px 0;
+  text-align: center;
+}
+.strip h2 { color: #fff; }
+.strip p { color: rgba(255,255,255,0.8); margin: 12px auto 28px; max-width: 520px; font-size: 1.05rem; }
+.strip .cta-pair { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.strip .cta-pair .cta.outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.45); }
+.strip .cta-pair .cta.outline:hover { background: rgba(255,255,255,0.08); }
+
+/* Contact */
+.contact .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.contact-block { padding: 28px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; }
+.contact-block h3 { color: var(--navy-d); margin-bottom: 16px; }
+.contact-block p { margin-bottom: 14px; font-size: 0.95rem; }
+.contact-block a { color: var(--navy); text-decoration: none; font-weight: 500; }
+.contact-block a:hover { text-decoration: underline; }
+.contact-line { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+.contact-line .cl-label { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); width: 72px; flex-shrink: 0; padding-top: 2px; }
+.elp-contact { background: var(--gold-l); border: 1px solid var(--gold); border-radius: 10px; padding: 14px 16px; font-size: 0.87rem; color: var(--navy-d); margin-top: 18px; }
+.elp-contact strong { display: block; color: var(--navy); margin-bottom: 4px; }
+@media (max-width: 800px) { .contact .grid { grid-template-columns: 1fr; gap: 24px; } }
+
+/* Footer */
+footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 32px 0; font-size: 0.86rem; text-align: center; }
+footer strong { color: #fff; }
+footer .foot-note { margin-top: 10px; font-size: 0.78rem; opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<!-- Top contact bar -->
+<div class="bar">
+  <div class="wrap">
+    <span><strong><a href="tel:16059000140">+1 605-900-0140</a></strong> · 5010 S. Minnesota Ave, Sioux Falls SD 57108</span>
+    <span><a href="mailto:susan@dakotaaccounting.com">susan@dakotaaccounting.com</a> · Free 30-min consultation</span>
+  </div>
+</div>
+
+<!-- Sticky nav -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark">SF</div>
+      <div class="brand-name">Susan K. Fitzgibbons, CPA<span>Dakota Accounting · Sioux Falls, SD</span></div>
+    </div>
+    <div class="menu">
+      <a href="#services">Services</a>
+      <a href="#about">About Susan</a>
+      <a href="#contact">Contact</a>
+      <a class="cta" href="#contact">Free Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="eyebrow">CPA · Sioux Falls, South Dakota</span>
+        <h1>I'm Susan Fitzgibbons — a Sioux Falls CPA who <em>keeps your books right</em> so you can run your business.</h1>
+        <p class="lede">I've helped small businesses and individuals in South Dakota with bookkeeping, payroll, and tax preparation for years. My clients come to me because they want a CPA who knows their name, answers their calls, and gives them straight answers — not a firm where they're just a file number.</p>
+        <div class="hero-actions">
+          <a class="cta gold" href="#contact">Book a Free Consultation</a>
+          <a class="cta alt" href="tel:16059000140">Call +1 605-900-0140</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>Bookkeeping</strong>monthly &amp; quarterly</div>
+          <div><strong>Payroll</strong>small business</div>
+          <div><strong>Tax Prep</strong>business &amp; personal</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-top">
+          <div class="practitioner-photo">SF</div>
+          <div class="practitioner-info">
+            <strong>Susan K. Fitzgibbons</strong>
+            <span>Certified Public Accountant</span>
+            <span>Sioux Falls, South Dakota</span>
+          </div>
+        </div>
+        <div class="elp-badge">
+          <strong>Dave Ramsey Endorsed Local Provider</strong>
+          Susan is a Dave Ramsey Endorsed Local Provider (ELP) for tax services — a designation based on professional integrity, service, and alignment with sound financial principles.
+        </div>
+        <div class="card-stats">
+          <div class="card-stat"><strong>Small biz</strong><span>specialist</span></div>
+          <div class="card-stat"><strong>SD-based</strong><span>local CPA</span></div>
+          <div class="card-stat"><strong>Year-round</strong><span>support</span></div>
+          <div class="card-stat"><strong>Free consult</strong><span>to start</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What I do</span>
+      <h2>Clear, reliable accounting services for small businesses and individuals in South Dakota.</h2>
+      <p>I focus on the three areas where accurate numbers matter most — and where getting them wrong costs you time, money, and sleep.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="svc-icon">B</div>
+        <h3>Bookkeeping</h3>
+        <p>Monthly and quarterly bookkeeping that keeps your records clean and your cash flow picture clear. I reconcile accounts, categorise transactions, and deliver reports you can actually read and act on.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon">P</div>
+        <h3>Payroll Services</h3>
+        <p>I handle payroll processing for small businesses — calculating deductions, preparing payroll runs, and managing the filings that come with them, so you pay your people right and stay compliant.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon">T</div>
+        <h3>Tax Preparation</h3>
+        <p>Business and personal tax returns prepared accurately and filed on time. I work year-round on tax planning as well — not just at filing season — so we're ahead of problems rather than reacting to them.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon">A</div>
+        <h3>Account Cleanup</h3>
+        <p>Took over a business with messy books, or let things slide for a few months? I've helped plenty of clients get their records back in order — without judgment, just methodical cleanup and a clear path forward.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon">C</div>
+        <h3>CFO Advisory</h3>
+        <p>For growing businesses that need more than transaction processing, I offer regular financial reviews and planning conversations — a sounding board with the numbers to back it up.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon">N</div>
+        <h3>New Client Onboarding</h3>
+        <p>Start with a free 30-minute consultation. I'll learn about your business, assess where things stand, and tell you exactly what I'd do and what it would cost — before we agree to anything.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why / About Susan -->
+<section class="why" id="about">
+  <div class="wrap">
+    <div class="grid">
+      <div class="why-visual">
+        <div class="badge">
+          <strong>Susan K. Fitzgibbons, CPA</strong>
+          <span>Dave Ramsey Endorsed Local Provider</span>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Why clients work with me</span>
+        <h2>A CPA who treats your business like it matters — because it does.</h2>
+        <p>I started Dakota Accounting because I saw a gap: small businesses in South Dakota deserved a CPA who was genuinely invested in their success, not a rotating staff of associates at a big firm. When you work with me, you work with me — not a junior hired last spring.</p>
+        <ul>
+          <li><div><strong>You deal with me directly</strong><span>No hand-offs, no call centres. I answer my own phone and return emails the same day.</span></div></li>
+          <li><div><strong>Honest flat-rate pricing</strong><span>I quote a clear fee before I start. No surprise invoices, no billing by the six-minute increment.</span></div></li>
+          <li><div><strong>Year-round, not just tax season</strong><span>I'm available all year for questions, planning conversations, and anything that comes up mid-year.</span></div></li>
+          <li><div><strong>Dave Ramsey Endorsed</strong><span>I'm a Dave Ramsey ELP for tax services — a trust signal that reflects the values I built this practice on: integrity and sound financial thinking.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<!-- NOTE: These are placeholder demo testimonials — replace with real client reviews before launch -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Client experiences</span>
+      <h2>What my clients say.</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"Susan took over our bookkeeping when we were drowning in a backlog. Within two months everything was reconciled and we finally had reports we could trust. She's worth every dollar."</p>
+        <cite>— Small business owner, Sioux Falls SD</cite>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"I'd been doing my own taxes for years and making mistakes I didn't even know about. Susan caught issues going back three years and helped me get things straight. I won't go back to doing it myself."</p>
+        <cite>— Self-employed contractor, South Dakota</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA strip -->
+<div class="strip">
+  <div class="wrap">
+    <h2>Let's get your books right.</h2>
+    <p>Start with a free 30-minute consultation. I'll listen, assess where things stand, and give you an honest picture — with no obligation to continue.</p>
+    <div class="cta-pair">
+      <a class="cta gold" href="#contact">Book a Free Consultation</a>
+      <a class="cta outline" href="tel:16059000140">Call +1 605-900-0140</a>
+    </div>
+  </div>
+</div>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Let's talk about your accounting needs.</h2>
+    </div>
+    <div class="grid">
+      <div class="contact-block">
+        <h3>Visit the office</h3>
+        <div class="contact-line"><span class="cl-label">Address</span><div>5010 S. Minnesota Ave<br>Sioux Falls, SD 57108</div></div>
+        <div class="contact-line"><span class="cl-label">Phone</span><a href="tel:16059000140">+1 605-900-0140</a></div>
+        <div class="contact-line"><span class="cl-label">Email</span><a href="mailto:susan@dakotaaccounting.com">susan@dakotaaccounting.com</a></div>
+        <div class="contact-line"><span class="cl-label">Website</span><a href="https://dakotaaccounting.com" target="_blank">dakotaaccounting.com</a></div>
+        <div class="elp-contact">
+          <strong>Dave Ramsey Endorsed Local Provider</strong>
+          Susan is endorsed by Dave Ramsey as a trusted tax professional in the Sioux Falls area.
+        </div>
+      </div>
+      <div class="contact-block">
+        <h3>Start the conversation</h3>
+        <p>Whether you need ongoing bookkeeping, a one-time tax return, or you're not sure exactly what you need yet — reach out. The free consultation is a no-pressure conversation to figure out if we're a good fit.</p>
+        <p>Call or email directly, or visit the office at 5010 S. Minnesota Ave. I'm based in Sioux Falls and serve clients throughout South Dakota.</p>
+        <a class="cta" href="mailto:susan@dakotaaccounting.com" style="margin-top:8px; display:inline-block;">Email Susan →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Susan K. Fitzgibbons, CPA — Dakota Accounting</strong><br>
+    5010 S. Minnesota Ave, Sioux Falls, SD 57108 · +1 605-900-0140 · susan@dakotaaccounting.com
+    <div class="foot-note">Redesign concept by Bamozz. Demo testimonials are illustrative only.</div>
+  </div>
+</footer>
+
+</body>
+</html>

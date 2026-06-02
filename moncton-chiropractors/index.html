@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moncton Chiropractors — Chiropractic Care in Moncton, NB</title>
+<style>
+:root {
+  --ink: #1e2b38;
+  --ink-2: #516070;
+  --bg: #f7f5f0;
+  --paper: #ffffff;
+  --line: #ddd8ce;
+  --accent: #3d6b82;
+  --accent-d: #2a4f61;
+  --accent-l: #e4edf2;
+  --sage: #6a8c72;
+  --sage-l: #e8f0ea;
+  --warm: #c8a46a;
+  --warm-s: #f5eedf;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3, h4 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -0.01em; line-height: 1.15; }
+h1 { font-size: clamp(2.1rem, 4.8vw, 3.6rem); }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.5rem); margin-bottom: 16px; }
+h3 { font-size: 1.2rem; margin-bottom: 10px; }
+p { color: var(--ink-2); }
+
+/* Top bar */
+.bar {
+  background: var(--accent-d);
+  color: #e8f0f5;
+  font-size: 0.85rem;
+  padding: 8px 0;
+}
+.bar .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.bar a { color: #e8f0f5; text-decoration: none; }
+.bar strong { color: #fff; }
+.bar .bar-note { font-size: 0.8rem; opacity: 0.8; }
+
+/* Nav */
+.nav { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; padding-bottom: 16px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark {
+  width: 42px; height: 42px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-d) 100%);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-family: Georgia, serif; font-size: 1.3rem; font-weight: 600;
+}
+.brand-name { font-family: Georgia, serif; font-size: 1.05rem; font-weight: 500; color: var(--ink); }
+.brand-name span { display: block; font-family: -apple-system, sans-serif; font-size: 0.68rem; color: var(--ink-2); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+.menu { display: flex; gap: 26px; align-items: center; }
+.menu a { color: var(--ink); text-decoration: none; font-size: 0.93rem; }
+.menu a:hover { color: var(--accent); }
+.cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 11px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.93rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cta:hover { background: var(--accent-d); }
+.cta.alt { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.cta.alt:hover { background: var(--accent-l); }
+.cta.sage { background: var(--sage); color: #fff; }
+.cta.sage:hover { background: #557a5d; }
+@media (max-width: 800px) { .menu { display: none; } }
+
+/* Hero */
+.hero {
+  padding: 68px 0 48px;
+  background: linear-gradient(160deg, var(--accent-l) 0%, var(--bg) 60%);
+}
+.hero .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+.eyebrow { display: inline-block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 18px; }
+.hero h1 { color: var(--ink); margin-bottom: 22px; }
+.hero h1 em { font-style: italic; color: var(--accent); }
+.hero .lede { font-size: 1.12rem; color: var(--ink-2); margin-bottom: 32px; max-width: 480px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.hero-meta { margin-top: 36px; display: flex; gap: 28px; flex-wrap: wrap; }
+.hero-meta div { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--ink-2); }
+.hero-meta strong { color: var(--ink); display: block; font-size: 1.05rem; font-family: Georgia, serif; }
+
+/* Hero card */
+.hero-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 24px 48px -28px rgba(42, 79, 97, 0.22);
+}
+.hero-card .card-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 8px; }
+.hero-card h3 { color: var(--accent-d); margin-bottom: 14px; }
+.card-photo {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent-l) 0%, var(--sage-l) 100%);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.card-photo::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 35% 35%, rgba(61,107,130,0.18), transparent 55%),
+              radial-gradient(circle at 70% 70%, rgba(106,140,114,0.22), transparent 50%);
+}
+.card-photo-label {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent-d); z-index: 1;
+}
+.card-quote { background: var(--sage-l); border-left: 3px solid var(--sage); padding: 14px 16px; border-radius: 0 8px 8px 0; font-size: 0.92rem; color: var(--ink); font-style: italic; margin-top: 4px; }
+.card-quote cite { display: block; font-style: normal; font-size: 0.8rem; color: var(--ink-2); margin-top: 8px; }
+@media (max-width: 800px) {
+  .hero .grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero { padding: 48px 0 36px; }
+}
+
+/* Conditions strip */
+.conditions {
+  background: var(--accent-d);
+  padding: 20px 0;
+}
+.conditions .wrap { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.conditions .cond-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-right: 8px; flex-shrink: 0; }
+.cond-tag { background: rgba(255,255,255,0.12); color: #fff; font-size: 0.8rem; padding: 5px 12px; border-radius: 999px; white-space: nowrap; }
+
+/* Services */
+section { padding: 72px 0; }
+.section-head { max-width: 680px; margin-bottom: 48px; }
+.section-head .eyebrow { color: var(--accent); }
+
+.services { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.svc {
+  padding: 28px 24px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.svc:hover { border-color: var(--accent); transform: translateY(-2px); }
+.svc-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: var(--accent-l);
+  color: var(--accent-d);
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif; font-size: 1.25rem; font-weight: 600;
+  margin-bottom: 16px;
+}
+.svc h3 { color: var(--ink); }
+.svc p { font-size: 0.94rem; }
+@media (max-width: 800px) { .svc-grid { grid-template-columns: 1fr; } }
+
+/* Why */
+.why .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.why-visual {
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, var(--warm-s) 0%, var(--accent-l) 100%);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.why-visual::before {
+  content: "Reception";
+  position: absolute; top: 20px; left: 20px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent-d); background: rgba(255,255,255,0.9); padding: 5px 10px; border-radius: 20px;
+}
+.why-visual::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 28% 22%, rgba(61,107,130,0.18), transparent 50%),
+    radial-gradient(circle at 72% 78%, rgba(106,140,114,0.24), transparent 50%);
+}
+.why-visual .badge {
+  position: absolute; bottom: 28px; left: 24px; right: 24px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  padding: 20px 22px;
+  border-radius: 14px;
+  z-index: 2;
+}
+.why-visual .badge strong { display: block; font-family: Georgia, serif; font-size: 1.45rem; color: var(--accent-d); }
+.why-visual .badge span { color: var(--ink-2); font-size: 0.9rem; }
+.why ul { list-style: none; margin-top: 28px; }
+.why li { padding: 13px 0; border-bottom: 1px solid var(--line); display: flex; gap: 14px; align-items: flex-start; }
+.why li::before { content: "✓"; color: var(--sage); font-weight: 700; font-size: 1.1rem; flex-shrink: 0; padding-top: 1px; }
+.why li strong { display: block; color: var(--ink); margin-bottom: 2px; font-size: 0.97rem; }
+.why li span { color: var(--ink-2); font-size: 0.92rem; }
+@media (max-width: 800px) { .why .grid { grid-template-columns: 1fr; gap: 32px; } }
+
+/* Testimonials */
+.testimonials { background: var(--paper); border-top: 1px solid var(--line); }
+.test-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+.test-card {
+  padding: 28px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.stars { color: var(--warm); font-size: 1.1rem; margin-bottom: 14px; letter-spacing: 0.05em; }
+.test-card p { font-size: 0.97rem; font-style: italic; color: var(--ink); margin-bottom: 16px; }
+.test-card cite { font-style: normal; font-size: 0.85rem; color: var(--ink-2); font-weight: 600; }
+@media (max-width: 800px) { .test-grid { grid-template-columns: 1fr; } }
+
+/* CTA strip */
+.strip {
+  background: var(--accent-d);
+  color: #fff;
+  padding: 56px 0;
+  text-align: center;
+}
+.strip h2 { color: #fff; }
+.strip p { color: rgba(255,255,255,0.82); margin: 12px auto 28px; max-width: 520px; font-size: 1.05rem; }
+.strip .cta { background: var(--warm); color: var(--accent-d); font-weight: 600; }
+.strip .cta:hover { background: #d8b485; }
+.strip .cta-pair { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.strip .cta-pair .cta.outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.5); }
+.strip .cta-pair .cta.outline:hover { background: rgba(255,255,255,0.1); }
+
+/* Contact */
+.contact .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.contact-block { padding: 28px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; }
+.contact-block h3 { color: var(--accent-d); margin-bottom: 16px; }
+.contact-block p { margin-bottom: 14px; font-size: 0.95rem; }
+.contact-block a { color: var(--accent); text-decoration: none; font-weight: 500; }
+.contact-block a:hover { text-decoration: underline; }
+.contact-line { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+.contact-line .cl-label { font-size: 0.76rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); width: 76px; flex-shrink: 0; padding-top: 2px; }
+.contact-line a { color: var(--accent); }
+.contact-note { background: var(--warm-s); border-radius: 8px; padding: 12px 14px; font-size: 0.85rem; color: var(--accent-d); margin-top: 16px; }
+@media (max-width: 800px) { .contact .grid { grid-template-columns: 1fr; gap: 24px; } }
+
+/* Footer */
+footer { background: var(--ink); color: rgba(255,255,255,0.65); padding: 32px 0; font-size: 0.86rem; text-align: center; }
+footer strong { color: #fff; }
+footer .foot-note { margin-top: 10px; font-size: 0.78rem; opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<!-- Top contact bar -->
+<div class="bar">
+  <div class="wrap">
+    <span><strong>(506) 000-0000</strong> · Moncton, New Brunswick <span class="bar-note">(phone to be confirmed)</span></span>
+    <span>New patients welcome · Book online or call</span>
+  </div>
+</div>
+
+<!-- Sticky nav -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark">M</div>
+      <div class="brand-name">Moncton Chiropractors<span>Chiropractic Care · Moncton, NB</span></div>
+    </div>
+    <div class="menu">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+      <a class="cta" href="#contact">Book a Visit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="eyebrow">Chiropractic Clinic · Moncton, New Brunswick</span>
+        <h1>Professional chiropractic care in Moncton — <em>from a qualified practitioner.</em></h1>
+        <p class="lede">At Moncton Chiropractors, our lead chiropractor provides evidence-informed care for back pain, neck pain, sports injuries, and accident recovery. Conveniently located in Moncton with appointments available now.</p>
+        <div class="hero-actions">
+          <a class="cta" href="#contact">Book a Consultation</a>
+          <a class="cta alt" href="tel:5060000000">Call Us</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>Evidence-based</strong>chiropractic approach</div>
+          <div><strong>All ages</strong>welcome</div>
+          <div><strong>Moncton, NB</strong>locally owned</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-label">Treatment Room</div>
+        <div class="card-photo">
+          <span class="card-photo-label">Treatment Room</span>
+        </div>
+        <!-- Placeholder demo testimonial — replace with real patient quote before launch -->
+        <div class="card-quote">
+          "I came in with chronic lower back pain I'd had for months. After just a few sessions, I was back on the field. Highly recommend."
+          <cite>— Local patient, Moncton NB</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Conditions treated strip -->
+<div class="conditions">
+  <div class="wrap">
+    <span class="cond-label">Conditions treated</span>
+    <span class="cond-tag">Neck Pain</span>
+    <span class="cond-tag">Back Pain</span>
+    <span class="cond-tag">Shoulder Pain</span>
+    <span class="cond-tag">Headaches &amp; Migraines</span>
+    <span class="cond-tag">Sports Injuries</span>
+    <span class="cond-tag">Work Injuries</span>
+    <span class="cond-tag">Arthritis</span>
+    <span class="cond-tag">Muscle Pain</span>
+    <span class="cond-tag">Numbness &amp; Tingling</span>
+    <span class="cond-tag">Poor Sleep &amp; Fatigue</span>
+    <span class="cond-tag">Spinal Disc Injuries</span>
+  </div>
+</div>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What we treat</span>
+      <h2>Targeted chiropractic care for the conditions that slow you down.</h2>
+      <p>Whether you're recovering from a sports injury, managing chronic pain, or dealing with the aftermath of an accident, we provide hands-on treatment tailored to your situation.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="svc-icon">C</div>
+        <h3>Chiropractic Care</h3>
+        <p>Spinal assessment and manual adjustment for neck pain, back pain, and headaches. Our approach is evidence-informed and adapted to each patient's presentation and comfort level.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon">S</div>
+        <h3>Sports Injury Treatment</h3>
+        <p>From acute strains to recurring overuse injuries, we work with active patients to restore function and reduce the risk of re-injury — so you can get back to training or competition sooner.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon">A</div>
+        <h3>Accident Recovery</h3>
+        <p>Whiplash, soft-tissue injury, and post-collision discomfort treated with structured, documented care. We work alongside your insurance or WHSCC claim where applicable.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon">P</div>
+        <h3>Postural Assessment</h3>
+        <p>Desk workers, drivers, and anyone dealing with chronic stiffness can benefit from a full postural screen. We identify the root cause, not just the site of pain.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon">R</div>
+        <h3>Rehabilitation &amp; Exercises</h3>
+        <p>We give you specific corrective exercises to do at home between visits — building strength and stability so the improvements last well beyond the treatment room.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon">N</div>
+        <h3>New Patient Assessment</h3>
+        <p>Your first visit includes a thorough health history, physical exam, and a clear explanation of what we found and how we propose to treat it — before anything begins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why us -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="grid">
+      <div class="why-visual">
+        <div class="badge">
+          <strong>Our Lead Chiropractor</strong>
+          <span>Qualified, registered practitioner · Moncton, NB</span>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Why patients choose us</span>
+        <h2>Real care from a qualified chiropractor in Moncton.</h2>
+        <p>You deserve to know who is treating you before you book. Our lead chiropractor is a licensed Doctor of Chiropractic, registered with the New Brunswick Chiropractors' Association, with experience across sports injury, accident recovery, and chronic pain management.</p>
+        <ul>
+          <li><div><strong>Qualified and registered</strong><span>Our practitioner holds a Doctor of Chiropractic degree and is fully registered with provincial regulatory bodies.</span></div></li>
+          <li><div><strong>Clear diagnosis first</strong><span>We explain exactly what we find before treatment starts — no pressure, no upselling extra packages.</span></div></li>
+          <li><div><strong>Treatment tailored to you</strong><span>We don't apply a one-size-fits-all protocol. Every plan is adapted to your history, tolerance, and goals.</span></div></li>
+          <li><div><strong>New patients always welcome</strong><span>No referral needed. Call or use the contact form to book your initial assessment.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<!-- NOTE: These are placeholder demo testimonials — replace with verified patient reviews before launch -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Patient experiences</span>
+      <h2>What our patients say.</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"I'd been putting off seeing a chiropractor for years. Within three visits my neck pain had dropped from a 7 to a 2. I wish I hadn't waited so long."</p>
+        <cite>— D. Boudreau, Moncton NB</cite>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"After my car accident, my doctor recommended chiropractic as part of my recovery plan. The treatment was thorough and the whole process was explained clearly. Really appreciated the professionalism."</p>
+        <cite>— M. Leblanc, Moncton NB</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA strip -->
+<div class="strip">
+  <div class="wrap">
+    <h2>Ready to feel better?</h2>
+    <p>Book your first appointment today. We see new patients without referral — just call or use the contact form below and we'll get you in as soon as possible.</p>
+    <div class="cta-pair">
+      <a class="cta" href="#contact">Book a Consultation</a>
+      <a class="cta outline" href="tel:5060000000">Call (506) 000-0000</a>
+    </div>
+  </div>
+</div>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Book your appointment in Moncton.</h2>
+    </div>
+    <div class="grid">
+      <div class="contact-block">
+        <h3>Clinic details</h3>
+        <div class="contact-line"><span class="cl-label">Location</span><div>Moncton, New Brunswick, Canada</div></div>
+        <div class="contact-line"><span class="cl-label">Phone</span><a href="tel:5060000000">(506) 000-0000</a></div>
+        <div class="contact-line"><span class="cl-label">Booking</span><div>Call to book or use the form →</div></div>
+        <div class="contact-line"><span class="cl-label">Patients</span><div>New patients welcome · No referral needed</div></div>
+        <div class="contact-note">📋 Phone number is a placeholder for this redesign concept. Final contact details to be confirmed with the clinic before launch.</div>
+      </div>
+      <div class="contact-block">
+        <h3>Send us a message</h3>
+        <p>Use the form below to request an appointment or ask a question. We aim to respond within one business day.</p>
+        <p><em>This is a redesign concept — the form below links to the existing contact page at <a href="https://monctonchiropractors.com/contact" target="_blank">monctonchiropractors.com/contact</a> while the new site is being built.</em></p>
+        <a class="cta" href="https://monctonchiropractors.com/contact" target="_blank" style="margin-top:8px; display:inline-block;">Go to Contact Form →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Moncton Chiropractors</strong> · Moncton, New Brunswick, Canada<br>
+    Professional chiropractic care in Moncton. New patients welcome.
+    <div class="foot-note">Redesign concept by Bamozz. Practitioner name and phone number are placeholders to be confirmed before launch. Demo testimonials are illustrative only.</div>
+  </div>
+</footer>
+
+</body>
+</html>
